@@ -20,7 +20,15 @@ const returnAsNumbersTests = [
 
 const returnAsNumbers = (arr) => {
   // cast all non-NaNy strings to numbers and return the new array
-  // Hint: early return condition --> array contains any non-strings
+  if (arr.some(thingsToNumber => typeof thingsToNumber !== "string")) return null;
+  let eval = [];
+  arr.forEach(thingsToNumber => {
+    if (!isNaN(thingsToNumber)) {
+      eval.push(+thingsToNumber);
+    }
+  });
+  return eval;
+ // Hint: early return condition --> array contains any non-strings
 };
 
 evaluate(returnAsNumbers, returnAsNumbersTests);
