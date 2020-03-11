@@ -11,7 +11,9 @@ const earlyReturn2Tests = [
 
 function earlyReturn2(param) {
   // write an early return to pass the test cases
-
+  if (typeof param !== "object" || Object.entries(param).length === 0) {
+    return "param must be an array";
+  }
   return param.reduce((acc, item) => acc + item);
 }
 
