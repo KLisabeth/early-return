@@ -20,8 +20,21 @@ const sumAllNumberysTests = [
 ];
 
 const sumAllNumberys = (arr) => {
-  // write me!
-};
+   // write me!
+   let total = 0;
+   let numbery = arr.every(x => typeof x === "number");
+   let nan = arr.includes(NaN);
+   if (numbery || nan) {
+     return null;
+   } else {
+     for (let item of arr) {
+       if (!isNaN(item)) {
+         total = total + Number(item);
+       }
+     }
+   }
+   return total;
+ };
 
 evaluate(sumAllNumberys, sumAllNumberysTests);
 
