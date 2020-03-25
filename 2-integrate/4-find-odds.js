@@ -20,6 +20,21 @@ const findAllOddsTests = [
 
 const findAllOdds = (arr) => {
   // write me!
+  let newArray = [];
+  if (arr.includes(NaN)) {
+    return null;
+  }
+  const allNum = arr.every(x => typeof x === "number");
+  if (allNum) {
+    return null;
+  } else {
+    for (let item of arr) {
+      if (!isNaN(item) && item % 2 === 1) {
+        newArray.push(item);
+      }
+    }
+  }
+  return newArray;
 };
 
 evaluate(findAllOdds, findAllOddsTests);
