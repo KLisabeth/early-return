@@ -1,5 +1,5 @@
 const evaluate = require('../evaluate');
-debugger;
+//debugger;
 
 const findEvensArray1 = ['.', '1', '2', ':'];
 const findEvensArray2 = ['1', 'two', 'three', '10'];
@@ -21,6 +21,21 @@ const findAllEvensTests = [
 
 const findAllEvens = (arr) => {
   // write me!
+  let newArray = [];
+  if (arr.includes(NaN)) {
+    return null;
+  }
+  const allNum = arr.every(x => typeof x === "number");
+  if (allNum) {
+    return null;
+  } else {
+    for (let item of arr) {
+      if (!isNaN(item) && item % 2 === 0) {
+        newArray.push(item);
+      }
+    }
+  }
+  return newArray;
 };
 
 evaluate(findAllEvens, findAllEvensTests);
